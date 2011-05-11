@@ -1,0 +1,67 @@
+<%= form_for @technicalspecialist,  :html => {:multipart => true }  do |f| %>
+    <h1>Technical Specialist questionnaire</h1>
+    <p class="italics">The questions here are for people looking to join us as Technical Specialists. We are looking for people that can install, configure and troubleshoot Microsoft Project Server and Microsoft SharePoint . Now if the names seems alien to you, not a problem we do not expect you to know either Project Server or SharePoint on day one, but knowledge of these two applications will be a major plus point.</p>
+    <p class="italics">One thing you would have noticed is that this unlike most people, we are not looking for a fancy resume or a list of skills. But what we are looking for is someone that can solve problems, adapt and learn. You will need around 30 minutes to complete this questionnaire.</p>
+    <% if @technicalspecialist.errors.any? %>
+        <div class="error" id="error_explanation">
+          <div class="error">
+            <p>Opps looks like something went wrong. You need to fill out the following</p>
+            <ul>
+              <% @technicalspecialist.errors.each do |err| %>
+                  <% if err.class.to_s.downcase == "array" %>
+                      <li><%= @technicalspecialist.errors[err[0]][0] %></li>
+                  <% else %>
+                      <li><%= @technicalspecialist.errors[err][0] %></li>
+                  <% end %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+    <% end %>
+    <div class="questions">
+      <h3>Your details</h3>
+      <p class="description">Tell us who you are</p>
+      <label>
+        Name
+        <% if @technicalspecialist.errors.any? and @technicalspecialist.errors[:name].any? %>
+            <%= f.text_area :name, :class => "small errormark" %>
+        <% else %>
+            <%= f.text_area :name, :class => "small" %>
+        <% end %>
+      </label>
+      <label>
+        Email Address
+        <% if @technicalspecialist.errors.any? and @technicalspecialist.errors[:email].any? %>
+            <%= f.text_area :email, :class => "small errormark" %>
+        <% else %>
+            <%= f.text_area :email, :class => "small" %>
+        <% end %>
+      </label>
+      <label>
+        Phone Number
+        <% if @technicalspecialist.errors.any? and @technicalspecialist.errors[:mobile].any? %>
+            <%= f.text_area :mobile, :class => "small errormark" %>
+        <% else %>
+            <%= f.text_area :mobile, :class => "small" %>
+        <% end %>
+      </label>
+      <h3>Answer this questions</h3>
+      <% index = 1 %>
+      <% @questions.each do |question| %>
+          <p><%= question.question %></p>
+          <label>
+            Answer
+            <textarea rows="" cols="" name="answer_<%= question.id %>" class="large" ></textarea>
+          </label>
+          <input type="hidden" name="questionid<%= index %>" value="<%= question.id %>" />
+          <% index = index+1 %>
+          <div class="clearfix"></div>
+      <% end %>
+      <div class="submit-button">
+        <a href="#" class="css3-button-blue">Submit answers for review</a>
+      </div>
+    </div>
+<% end %>
+<!-- client side validation is here -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+<%= javascript_include_tag "technicalsupport" %>

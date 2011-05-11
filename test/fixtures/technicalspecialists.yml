@@ -1,0 +1,10 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  name: ""
+  email: MyString
+  mobile: "some mobile no"
+
+two:
+  name: MyString
+  email: MyString
+  mobile: "some mobile no"

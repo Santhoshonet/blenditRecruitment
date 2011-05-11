@@ -1,0 +1,3 @@
+<% @designer.errors.each do |err,desc| %>
+                    <li><%= desc %></li>
+                    <% end %>

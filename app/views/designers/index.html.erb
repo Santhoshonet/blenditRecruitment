@@ -1,0 +1,118 @@
+<%= form_for @designer,  :html => {:multipart => true }  do |f| %>
+    <h1>Front End Designer Questionnaire</h1>
+    <p class="italics">
+      The questions here are for people looking to join us as designers. We are a web development company so something we look for in people is their ability to write HTML,CSS and JavaScript. Now if all this seems alien it is not a problem, we are always looking for people that can learn. So you just might have to spend some additional time learning these skills.
+    </p>
+    <p class="italics">
+      Before you start this questionnaire you will need to have the following ready
+    </p>
+    <ul class="italics">
+      <li>A portfolio - That is a fancy way of saying we need to see samples of the work you have done.</li>
+      <li>Samples of public code you may have</li>
+    </ul>
+    <% if @designer.errors.any? %>
+        <div class="error">
+          <p>Opps looks like something went wrong. You need to fill out the following</p>
+          <ul>
+            <% @designer.errors.each do |err| %>
+                <% if err.class.to_s.downcase == "array" %>
+                    <li><%= @designer.errors[err[0]][0] %></li>
+                <% else %>
+                    <li><%= @designer.errors[err][0] %></li>
+                <% end %>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="questions">
+      <h3>Your details</h3>
+      <p class="description">Tell us who you are</p>
+      <label>
+        Name
+        <% if @designer.errors.any? and @designer.errors[:name].any? %>
+            <%= f.text_area :name, :class => "small errormark" %>
+        <% else %>
+            <%= f.text_area :name, :class => "small" %>
+        <% end %>
+      </label>
+      <label>
+        Email Address
+        <% if @designer.errors.any? and @designer.errors[:email].any? %>
+            <%= f.text_area :email, :class => "small errormark" %>
+        <% else %>
+            <%= f.text_area :email, :class => "small" %>
+        <% end %>
+      </label>
+      <label>
+        Phone Number
+        <% if @designer.errors.any? and @designer.errors[:mobile].any? %>
+            <%= f.text_area :mobile, :class => "small errormark" %>
+        <% else %>
+            <%= f.text_area :mobile, :class => "small" %>
+        <% end %>
+      </label>
+      <h3>Your portfolio</h3>
+      <p class="description">Give us links to your online portfolios or if you don't have, just upload some samples</p>
+      <label>
+        Link to portfolios
+        <% if @designer.errors.any? and @designer.errors[:portpolios].any? %>
+            <%= f.text_area :portpolios, :class => "large errormark" %>
+        <% else %>
+            <%= f.text_area :portpolios, :class => "large" %>
+        <% end %>
+      </label>
+      <p class="seperator">Or</p>
+      <div class="clearfix"></div>
+      <label>
+        Upload some samples
+        <input type="file" name="attachment" >
+      </label>
+      <h3>Inspiration</h3>
+      <p class="description">
+        Give us three websites or web applications you are inspired by. This can be websites or web applications you like using or just find cool for some reason. Just tell us why you like these websites.
+      </p>
+      <label>
+        URL
+      </label>
+      <% if @designer.errors.any? and @designer.errors[:inspirationurl1].any? %>
+          <%= f.text_area :inspirationurl1, :class => "small errormark" %>
+      <% else %>
+          <%= f.text_area :inspirationurl1, :class => "small" %>
+      <% end %>
+      <% if @designer.errors.any? and @designer.errors[:inspirationurl2].any? %>
+          <%= f.text_area :inspirationurl2, :class => "small errormark" %>
+      <% else %>
+          <%= f.text_area :inspirationurl2, :class => "small" %>
+      <% end %>
+      <% if @designer.errors.any? and @designer.errors[:inspirationurl3].any? %>
+          <%= f.text_area :inspirationurl3, :class => "small errormark" %>
+      <% else %>
+          <%= f.text_area :inspirationurl3, :class => "small" %>
+      <% end %>
+      <label>
+        Why do you like these site?
+        <% if @designer.errors.any? and @designer.errors[:inspirationcomment].any? %>
+            <%= f.text_area :inspirationcomment, :class => "large errormark" %>
+        <% else %>
+            <%= f.text_area :inspirationcomment, :class => "large" %>
+        <% end %>
+      </label>
+      <!-- Todo: Add these form elements -->
+      <h3>Know any JavaScript?</h3>
+      <p class="description">Have you built anything using JavaScript? Show us some samples.</p>
+      <label>
+        JavaScript Sample
+        <% if @designer.errors.any? and @designer.errors[:javascript].any? %>
+            <%= f.text_area :javascript, :class => "large errormark" %>
+        <% else %>
+            <%= f.text_area :javascript, :class => "large" %>
+        <% end %>
+      </label>
+      <div class="submit-button">
+        <a href="#" class="css3-button-blue">Submit answers for review</a>
+      </div>
+    </div>
+<% end %>
+<!-- client side validation is here -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+<%= javascript_include_tag "designers" %>

@@ -1,0 +1,15 @@
+'An error has occurred while establishing a connection to the server. When connecting to SQL Server 2005' this failure may be caused by the fact that under the default settings SQL Server does not allow remote connections. (provider: TCP Provider error: 0 - No connection could be made because the target machine actively refused it.)' What are all the posibilities of getting this error?
+'You receive a 'SQL Server does not exist or access denied' error message when you try to connect to a SQL Server named instance in a cluster by using TCP/IP sockets' When you got this message what goes wrong in the application?
+'MOSS Setup error: This product requires ASP.NET v2.0 to be set to ‘Allow’ in the list of Internet Information Services (IIS) Web Server Extensions.' What do you think about solution of this problem?.
+If you get 'unknown error' then how do you find the actual problem?
+Whats the difference between NTFS and FAT and which file system is used in Windows 2003/08 and what its advantages?
+How can I find out if a server is reachable or not?
+What is DNS and how is it used?
+What is Active Directory?
+What is a proxy?
+How do I find out if a port is open on a server?
+How do you diagnose poor hardware performance?
+What is remote connectivity and list a tool/s you have used to perform this task?
+In your own words please explain what is a workflow within an application?
+Name a few word processing and spread sheeting applications mostly widely used by business today?
+If you participate in any IT forums and blogs please list out the names and URL’s of the forums / blogs?

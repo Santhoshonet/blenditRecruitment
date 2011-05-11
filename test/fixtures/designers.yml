@@ -1,0 +1,22 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: ""
+  email: MyString
+  portpolios: MyText
+  inspirationurl1: MyString
+  inspirationurl2: MyString
+  inspirationurl3: MyString
+  inspirationcomment: MyText
+
+two:
+  name: MyString
+  email: "santhoshonet@gmail.com"
+  mobile: 9273492
+  portpolios: MyText
+  inspirationurl1: MyString
+  inspirationurl2: MyString
+  inspirationurl3: MyString
+  inspirationcomment: MyText
+  javascript: "some script here"
+
